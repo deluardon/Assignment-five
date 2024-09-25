@@ -4,7 +4,7 @@ let onHomePage = true;
 
 function togglePage() {
     if (onHomePage) {
-        window.location.href = './blog.html';
+        window.location.href= 'blog.html';
     } else {
         window.location.href = './index.html';
     }

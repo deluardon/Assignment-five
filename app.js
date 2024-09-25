@@ -36,6 +36,12 @@ document.getElementById('donations-btn').addEventListener('click', function (eve
         document.getElementById('input-amount').value = "";
 
         document.getElementById('donate-title-add').innerText = tittle;
+        const hidden = document.getElementById('donate-title-hidden');
+        hidden.classList.remove('hidden');
+
+        const bangladeshTime = new Date().toLocaleString("en-US", { timeZone: "Asia/Dhaka" });
+        console.log(bangladeshTime);
+        document.getElementById('time-zone').innerText = bangladeshTime;
 
 
     }
