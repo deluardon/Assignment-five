@@ -6,7 +6,7 @@ function togglePage() {
     const currentURL = window.location.href;
     
     if (currentURL.includes('index.html')) {
-        window.location.href = 'blog.html';
+        window.location.href = './blog.html';
     } else {
         window.location.href = 'index.html';
     }
