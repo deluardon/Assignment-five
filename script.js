@@ -3,11 +3,14 @@
 let onHomePage = true;
 
 function togglePage() {
-    if (onHomePage) {
-        window.location.href= 'blog.html';
+    const currentURL = window.location.href;
+    
+    if (currentURL.includes('index.html')) {
+        window.location.href = 'blog.html';
     } else {
         window.location.href = 'index.html';
     }
+}
 
     onHomePage = !onHomePage;
 
