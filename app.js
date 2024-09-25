@@ -2,34 +2,47 @@
 
 document.getElementById('donations-btn').addEventListener('click', function (event) {
 
-  
+
     const input = document.getElementById('input-amount').value;
 
     const inputAmount = parseFloat(input);
-   
 
-   
-    if (inputAmount >0 ) {
-         const donatebtn=document.getElementById('donations-btn');
+    const tittle = document.getElementById('donate-title').innerText;
 
-         donatebtn.onclick=my_modal_5.showModal();
+    const descriptionadd = document.getElementById('donate-description').innerText;
+    console.log(descriptionadd);
+
+
+
+
+
+    if (inputAmount > 0) {
+        const donatebtn = document.getElementById('donations-btn');
+
+        donatebtn.onclick = my_modal_5.showModal();
 
         const balance = document.getElementById('amount').innerText;
         const balanceAmount = parseFloat(balance)
 
         const newbalance = balanceAmount - inputAmount;
         document.getElementById('amount').innerText = newbalance;
-        const donatebalance=document.getElementById('donate-balance').innerText;
+        const donatebalance = document.getElementById('donate-balance').innerText;
         const donateamount = parseFloat(donatebalance);
         console.log(typeof donateamount);
-        document.getElementById('donate-balance').innerText=donateamount+inputAmount;
+        const newdonatebalance = document.getElementById('donate-balance').innerText = donateamount + inputAmount;
+
+        console.log(newdonatebalance);
+        document.getElementById('donate-balance-add').innerText = newdonatebalance;
         document.getElementById('input-amount').value = "";
-    
+
+        document.getElementById('donate-title-add').innerText = tittle;
+
+
     }
-    else{
+    else {
         alert('Please enter the amount');
     }
-    
+
 
 
 });
@@ -38,7 +51,7 @@ function toggleSection(show, hide) {
     const mainsection = document.getElementById(show);
     const footersection = document.getElementById(hide);
     footersection.style.display = 'none';
-  
+
     // Show the new section
     mainsection.style.display = 'block';
 }
