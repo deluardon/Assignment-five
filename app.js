@@ -1,0 +1,70 @@
+
+
+document.getElementById('donations-btn').addEventListener('click', function (event) {
+
+  
+    const input = document.getElementById('input-amount').value;
+
+    const inputAmount = parseFloat(input);
+   
+
+   
+    if (inputAmount >0 ) {
+         const donatebtn=document.getElementById('donations-btn');
+
+         donatebtn.onclick=my_modal_5.showModal();
+
+        const balance = document.getElementById('amount').innerText;
+        const balanceAmount = parseFloat(balance)
+
+        const newbalance = balanceAmount - inputAmount;
+        document.getElementById('amount').innerText = newbalance;
+        const donatebalance=document.getElementById('donate-balance').innerText;
+        const donateamount = parseFloat(donatebalance);
+        console.log(typeof donateamount);
+        document.getElementById('donate-balance').innerText=donateamount+inputAmount;
+        document.getElementById('input-amount').value = "";
+    
+    }
+    else{
+        alert('Please enter the amount');
+    }
+    
+
+
+});
+
+function toggleSection(show, hide) {
+    const mainsection = document.getElementById(show);
+    const footersection = document.getElementById(hide);
+    footersection.style.display = 'none';
+  
+    // Show the new section
+    mainsection.style.display = 'block';
+}
+
+
+
+
+function ActiveStatus(activeButtonId) {
+    const activeButton = document.getElementById('active-btn');
+    const activeButton2 = document.getElementById('active-btn2');
+
+    if (activeButtonId === 'active-btn') {
+        activeButton.classList.remove('bg-gray-300', 'text-black', 'py-3', 'px-8',);
+        activeButton.classList.add('bg-blue-500', 'text-white');
+        activeButton2.classList.remove('bg-blue-500', 'text-white');
+        activeButton2.classList.add('bg-gray-300', 'text-black');
+        main.classList.remove('hidden');
+    } else {
+        activeButton2.classList.remove('bg-gray-300', 'text-black');
+        activeButton2.classList.add('bg-blue-500', 'text-white');
+        activeButton.classList.remove('bg-blue-500', 'text-white');
+        activeButton.classList.add('bg-gray-300', 'text-black');
+        activeButton2.classList.remove('hidden');
+    }
+}
+
+
+ActiveStatus('active-btn');
+
