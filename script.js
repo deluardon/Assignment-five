@@ -10,7 +10,7 @@ function togglePage() {
     } else {
         window.location.href = 'index.html';
     }
-}
+
 
     onHomePage = !onHomePage;
 
